@@ -1,8 +1,7 @@
 def read_txt_file(file_path):
     try:
         with open(file_path, 'r') as file:
-            file_content = file.read()
-            return file_content
+            return file.read()
     except FileNotFoundError:
         print(f"Error: File '{file_path}' not found.")
         return None
