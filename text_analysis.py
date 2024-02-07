@@ -23,8 +23,13 @@ def analyze_text(text):
 
     return word_count, line_count, char_count
 
+def modify_text(text, old_word, new_word):
+    modified_text = text.replace(old_word, new_word)
+    return modified_text
+
 file_path = './test.txt'
 content = read_txt_file(file_path)
+
 if content:
     print('Content read successfully!')
     print(content)
@@ -35,3 +40,10 @@ if content:
     print(f"Number of words: {word_count}")
     print(f"Number of lines: {line_count}")
     print(f"Number of characters: {char_count}")
+
+    old_word = input("Enter the word you want to replace: ")
+    new_word = input("Now enter the new word: ")
+    modified_content = modify_text(content, old_word, new_word)
+
+    print("Modified Content:")
+    print(modified_content)
